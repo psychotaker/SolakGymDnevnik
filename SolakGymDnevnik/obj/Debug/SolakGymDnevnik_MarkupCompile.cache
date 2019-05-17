@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-C:\Users\Teufik\Documents\Development\SolakSystem\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\
 SolakGymDnevnik
 none
 false
 DEBUG;TRACE
-C:\Users\Teufik\Documents\Development\SolakSystem\SolakGymDnevnik\SolakGymDnevnik\App.xaml
-21542060919
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\App.xaml
+51972587198
 1850677411
-5-2017746502
-211839174514
-Images\solakGymLogo.xaml;MainWindow.xaml;
+9-1662308428
+21890015102
+Images\solakGymLogo.xaml;Lista.xaml;MainWindow.xaml;Novi.xaml;Prijava.xaml;
 
-False
+True
 

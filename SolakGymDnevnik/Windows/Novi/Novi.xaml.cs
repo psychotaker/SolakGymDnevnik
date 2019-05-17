@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace SolakGymDnevnik
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Novi.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Novi : Window
     {
-        public MainWindow()
+        public Novi()
         {
             InitializeComponent();
         }
