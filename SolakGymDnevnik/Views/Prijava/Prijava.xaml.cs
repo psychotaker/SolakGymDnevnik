@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SolakGymDnevnik
+namespace SolakGymDnevnik.Views.Prijava
 {
     /// <summary>
-    /// Interaction logic for Novi.xaml
+    /// Interaction logic for Prijava.xaml
     /// </summary>
-    public partial class Novi : Window
+    public partial class Prijava : Window
     {
-        public Novi()
+        public Prijava()
         {
             InitializeComponent();
         }

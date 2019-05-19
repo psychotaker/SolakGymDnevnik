@@ -10,32 +10,38 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace SolakGymDnevnik
+namespace SolakGymDnevnik.Views.Glavni
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Glavni.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Glavni : Window
     {
-        public MainWindow()
+        public Glavni()
         {
             InitializeComponent();
         }
 
         private void BtnLista_OnClick(object sender, RoutedEventArgs e)
         {
-            var lista = new Lista();
+            var lista = new Lista.Lista();
             lista.Show();
             this.Close();
         }
 
         private void BtnNovi_OnClick(object sender, RoutedEventArgs e)
         {
-            var novi = new Novi();
+            var novi = new Novi.Novi();
             novi.Show();
+            this.Close();
+        }
+
+        private void BtnPrijava_OnClick(object sender, RoutedEventArgs e)
+        {
+            var prijava = new Prijava.Prijava();
+            prijava.Show();
             this.Close();
         }
     }
