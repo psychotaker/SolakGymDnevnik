@@ -18,7 +18,7 @@ namespace SolakGymDnevnik.Views.Novi
     /// <summary>
     /// Interaction logic for Novi.xaml
     /// </summary>
-    public partial class Novi : Window
+    public partial class Novi
     {
         private SolakGymDnevnikDataClassesDataContext dataContext;
         public Novi()
@@ -38,7 +38,7 @@ namespace SolakGymDnevnik.Views.Novi
                 if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text))
                 {
 
-                    var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbPhoneNumber.Text), 30);
+                    var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbPhoneNumber.Text), 1);
                     dataContext.Members.InsertOnSubmit(newMemeber);
                     dataContext.SubmitChanges();
                 }

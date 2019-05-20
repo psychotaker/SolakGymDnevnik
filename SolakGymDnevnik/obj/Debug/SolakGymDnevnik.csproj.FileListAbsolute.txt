@@ -27,6 +27,8 @@ C:\Users\Teufik\Documents\Development\SolakSystem\SolakGymDnevnik\SolakGymDnevni
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SolakGymDnevnik.exe.config
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SolakGymDnevnik.exe
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SolakGymDnevnik.pdb
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.dll
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Converters.dll
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Core.dll
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Css.dll
@@ -35,12 +37,23 @@ C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Deb
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Rendering.Gdi.dll
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Rendering.Wpf.dll
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Runtime.dll
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.csprojAssemblyReference.cache
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.xml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Images\solakGymLogo.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Simple Styles.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Glavni\Glavni.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Glavni\Glavni.g.cs
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Lista\Lista.g.cs
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Novi\Novi.g.cs
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Prijava\Prijava.g.cs
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\App.g.cs
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik_Content.g.cs
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik_MarkupCompile.cache
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik_MarkupCompile.lref
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\App.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Lista\Lista.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Novi\Novi.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Prijava\Prijava.baml
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.g.resources
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.Properties.Resources.resources
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.csproj.GenerateResource.cache
@@ -48,17 +61,4 @@ C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Deb
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.csproj.CopyComplete
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.exe
 C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.pdb
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Glavni\Glavni.g.cs
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Lista\Lista.g.cs
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Novi\Novi.g.cs
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Prijava\Prijava.g.cs
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Glavni\Glavni.baml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Lista\Lista.baml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Novi\Novi.baml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Prijava\Prijava.baml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.dll
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.xml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Simple Styles.baml
-C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\App.baml
+C:\Users\Teufik\Source\Repos\psychotaker\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.csprojAssemblyReference.cache

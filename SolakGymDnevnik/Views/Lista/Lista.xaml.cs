@@ -18,7 +18,7 @@ namespace SolakGymDnevnik.Views.Lista
     /// <summary>
     /// Interaction logic for Lista.xaml
     /// </summary>
-    public partial class Lista : Window
+    public partial class Lista
     {
         private SolakGymDnevnikDataClassesDataContext dataContext;
         public List<Member> Members { get; set; }
@@ -40,8 +40,11 @@ namespace SolakGymDnevnik.Views.Lista
             CalculateExpirationTime();
             var members = dataContext.Members.ToList();
 
-            var validMembers = from member in members where member.ExpirationTime >= 0 select member;
-            var invalidMembers = from member in members where member.ExpirationTime < 0 select member;
+            var sortedMembersByExpirationTime = from member in members orderby member.ExpirationTime select member;
+            var sortedMembersByName = from member in members orderby member.Name select member;
+
+            var validMembers = from member in sortedMembersByExpirationTime where member.ExpirationTime > 0 select member;
+            var invalidMembers = from member in sortedMembersByName where member.ExpirationTime <= 0 select member;
 
             lbClanovi.ItemsSource = validMembers;
             lbIstekliClanovi.ItemsSource = invalidMembers;
@@ -66,11 +69,12 @@ namespace SolakGymDnevnik.Views.Lista
 
         public void BtnProduzi_OnClick(object sender, RoutedEventArgs e)
         {
-            var invalidMembers = from member in dataContext.Members where member.ExpirationTime < 0 select member;
+            var invalidMembers = from member in dataContext.Members where member.ExpirationTime <= 0 select member;
             foreach (var invalidMember in invalidMembers)
             {
-                invalidMember.MembershipDuration = DateTime.Today.AddDays(30);
-                invalidMember.ExpirationTime = (invalidMember.MembershipDuration - DateTime.Today).Days;
+                invalidMember.ExtendtMembershipByMonth(1);
+                //invalidMember.MembershipDuration = DateTime.Today.AddMonths(1);
+                //invalidMember.ExpirationTime = (invalidMember.MembershipDuration - DateTime.Today).Days;
             }
 
             dataContext.SubmitChanges();

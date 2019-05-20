@@ -111,15 +111,22 @@ namespace SolakGymDnevnik
 			OnCreated();
 		}
 
-        public Member(string name, int phoneNumber, double membershipDuration)
-        {
-            Name = name;
-            PhoneNumber = phoneNumber;
-            MembershipDuration = DateTime.Today.AddDays(membershipDuration);
-            ExpirationTime = (MembershipDuration - DateTime.Today).Days;
-        }
+		public Member(string name, int phoneNumber, int membershipDuration)
+		{
+			OnCreated();
+			Name = name;
+			PhoneNumber = phoneNumber;
+			ExtendtMembershipByMonth(membershipDuration);
+		}
 
-        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public void ExtendtMembershipByMonth(int membershipDuration)
+		{
+			MembershipDuration = DateTime.Today.AddMonths(membershipDuration);
+			ExpirationTime = (MembershipDuration - DateTime.Today).Days;
+
+		}
+
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
