@@ -12,7 +12,6 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
-using SolakGymDnevnik.Models;
 
 namespace SolakGymDnevnik.Views.Lista
 {
@@ -59,7 +58,7 @@ namespace SolakGymDnevnik.Views.Lista
             }
         }
 
-        // TODO
+        // TODO Update members
         public void UpateMember()
         {
 
@@ -81,8 +80,8 @@ namespace SolakGymDnevnik.Views.Lista
 
         private void BtnBack_OnClick(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new Glavni.Glavni();
-            mainWindow.Show();
+            var glavni = new Glavni.Glavni();
+            glavni.Show();
             this.Close();
         }
     }

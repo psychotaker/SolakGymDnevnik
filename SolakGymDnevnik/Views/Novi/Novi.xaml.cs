@@ -67,5 +67,7 @@ namespace SolakGymDnevnik.Views.Novi
             mainWindow.Show();
             this.Close();
         }
+
+
     }
 }

@@ -85,6 +85,8 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -103,6 +105,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Admin.cs" />
     <Compile Include="SolakGymDnevnikDataClasses.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -139,7 +142,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Models\Clan.cs" />
     <Compile Include="Views\Glavni\Glavni.xaml.cs">
       <DependentUpon>Glavni.xaml</DependentUpon>
     </Compile>
@@ -203,6 +205,7 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Images\logo.png" />
+    <Resource Include="Images\logo_ftz_icon.ico" />
     <Content Include="Images\solakGymLogo.svg" />
   </ItemGroup>
   <ItemGroup>

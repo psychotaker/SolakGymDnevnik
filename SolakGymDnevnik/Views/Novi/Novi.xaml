@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SolakGymDnevnik.Views.Novi"
         mc:Ignorable="d"
-        Title="Dodaj novog člana" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Dodaj novog člana" Icon="../../Images/logo_ftz_icon.ico" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Window.Resources>
         <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
             <Grid>
