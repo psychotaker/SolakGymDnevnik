@@ -8,6 +8,6 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("images/solakgymlogo.svg")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("appicon.ico")]
 
 

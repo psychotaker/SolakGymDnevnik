@@ -7,12 +7,12 @@ using System.Windows;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("SolakGymDnevnik")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyTitle("Solak Gym Dnevnik")]
+[assembly: AssemblyDescription("Dnevnik za teretanu Solak Gym")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("SolakGymDnevnik")]
-[assembly: AssemblyCopyright("Copyright ©  2019")]
+[assembly: AssemblyProduct("Solak Gym Dnevnik")]
+[assembly: AssemblyCopyright("Copyright © Teufik Cajlakovic 2019")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

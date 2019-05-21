@@ -4,7 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         mc:Ignorable="d"
-        Title="Glavni" Icon="../../Images/logo_ftz_icon.ico" Height="720" Width="1280" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="600">
+        Title="Solak Gym Dnevnik" Icon="../../Images/logo_ftz_icon.ico" Height="720" Width="1280" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="600">
     <Window.Resources>
         <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
             <Grid>

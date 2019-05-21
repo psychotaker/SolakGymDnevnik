@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+  <?define SolakGymDnevnik_TargetDir=$(var.SolakGymDnevnik.TargetDir)?>
+  <Product Id="*" Name="Solak Gym Dnevnik" Language="1033" Version="1.0.0.0" Manufacturer="Teufik Cajlakovic" UpgradeCode="b914ef08-8af9-47bb-9e45-6932e0d7b63b">
+    <Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
+    <WixVariable Id="WixUILicenseRtf" Value="$(var.ProjectDir)\license.rtf" />
+    <Icon Id="icon.ico" SourceFile="$(var.ProjectDir)Icon.ico" />
+    <Property Id="ARPPRODUCTICON" Value="icon.ico" />
+    <UIRef Id="WixUI_Minimal" />
+
+    <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
+    <MediaTemplate EmbedCab="yes"/>
+
+    <Feature Id="ProductFeature" Title="Solak Gym Dnevnik" Level="1">
+      <ComponentGroupRef Id="ProductComponents" />
+      <ComponentRef Id="ApplicationShortcut" />
+      <ComponentRef Id="ApplicationShortcutDesktop" />
+    </Feature>
+  </Product>
+
+  <Fragment>
+    <Directory Id="TARGETDIR" Name="SourceDir">
+      <Directory Id="ProgramFilesFolder">
+        <Directory Id="INSTALLFOLDER" Name="Solak Gym Dnevnik" />
+      </Directory>
+      <Directory Id="ProgramMenuFolder">
+        <Directory Id="ApplicationProgramsFolder" Name="Solak Gym Dnevnik"/>
+      </Directory>
+      <Directory Id="DesktopFolder" Name="Desktop"/>
+    </Directory>
+  </Fragment>
+
+  <Fragment>
+    <ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
+      <!-- TODO: Remove the comments around this Component element and the ComponentRef below in order to add resources to this installer. -->
+      <!-- <Component Id="ProductComponent"> -->
+      <!-- TODO: Insert files, registry keys, and other resources here. -->
+      <!-- </Component> -->
+      <Component Id="appIcon.ico" Guid="8D2D8E9C-39A6-44AB-A39B-1323DCA4CF31">
+        <File Id="appIcon.ico" Name="appIcon.ico" Source="$(var.SolakGymDnevnik_TargetDir)appIcon.ico" />
+      </Component>
+      <Component Id="SolakGymDnevnik.exe" Guid="F6F9B6D6-0694-40E8-99B8-2E167A38E3C5">
+        <File Id="SolakGymDnevnik.exe" Name="SolakGymDnevnik.exe" Source="$(var.SolakGymDnevnik_TargetDir)SolakGymDnevnik.exe" />
+      </Component>
+      <Component Id="SolakGymDnevnik.exe.config" Guid="DABF2C2C-DBCE-4638-AF4D-71C3DD14D1C7">
+        <File Id="SolakGymDnevnik.exe.config" Name="SolakGymDnevnik.exe.config" Source="$(var.SolakGymDnevnik_TargetDir)SolakGymDnevnik.exe.config" />
+      </Component>
+    </ComponentGroup>
+  </Fragment>
+  <Fragment>
+    <DirectoryRef Id="ApplicationProgramsFolder">
+      <Component Id="ApplicationShortcut" Guid="563E3BCF-B523-45DE-AAB9-1091437D2BB6">
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="Solak Gym Dnevnik" Description="Solak Gym Dnevnik" Icon="icon.ico" Target="[INSTALLFOLDER]Solak Gym Dnevnik.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Solak Gym Dnevnik" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+    <DirectoryRef Id="DesktopFolder">
+      <Component Id="ApplicationShortcutDesktop" Guid="3B5A57DD-5B27-4092-8638-0793BCD5EB8D">
+        <Shortcut Id="ApplicationDesktopShortcut" Name="Solak Gym Dnevnik" Description="Solak Gym Dnevnik" Icon="icon.ico" IconIndex="0" Target="[INSTALLFOLDER]Solak Gym Dnevnik.exe" WorkingDirectory="INSTALLFOLDER" />
+        <RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
+        <RegistryValue Root="HKCU" Key="Software\Solak Gym Dnevnik" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+      </Component>
+    </DirectoryRef>
+  </Fragment>
+</Wix>
