@@ -9,7 +9,7 @@
     <UIRef Id="WixUI_Minimal" />
 
     <MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-    <MediaTemplate EmbedCab="yes"/>
+    <MediaTemplate EmbedCab="yes" />
 
     <Feature Id="ProductFeature" Title="Solak Gym Dnevnik" Level="1">
       <ComponentGroupRef Id="ProductComponents" />
@@ -21,12 +21,12 @@
   <Fragment>
     <Directory Id="TARGETDIR" Name="SourceDir">
       <Directory Id="ProgramFilesFolder">
-        <Directory Id="INSTALLFOLDER" Name="Solak Gym Dnevnik" />
+        <Directory Id="INSTALLFOLDER" Name="SolakGymDnevnik" />
       </Directory>
       <Directory Id="ProgramMenuFolder">
-        <Directory Id="ApplicationProgramsFolder" Name="Solak Gym Dnevnik"/>
+        <Directory Id="ApplicationProgramsFolder" Name="SolakGymDnevnik" />
       </Directory>
-      <Directory Id="DesktopFolder" Name="Desktop"/>
+      <Directory Id="DesktopFolder" Name="Desktop" />
     </Directory>
   </Fragment>
 
@@ -45,21 +45,30 @@
       <Component Id="SolakGymDnevnik.exe.config" Guid="DABF2C2C-DBCE-4638-AF4D-71C3DD14D1C7">
         <File Id="SolakGymDnevnik.exe.config" Name="SolakGymDnevnik.exe.config" Source="$(var.SolakGymDnevnik_TargetDir)SolakGymDnevnik.exe.config" />
       </Component>
+      <Component Id="MaterialDesignThemes.Wpf.dll" Guid="dc77e962-3a51-4a43-974e-6c7a32aeeda2">
+        <File Id="MaterialDesignThemes.Wpf.dll" Name="MaterialDesignThemes.Wpf.dll" Source="$(var.SolakGymDnevnik_TargetDir)MaterialDesignThemes.Wpf.dll" />
+      </Component>
+      <Component Id="MaterialDesignExtensions.dll" Guid="8cf14ab7-b953-481b-a73c-675224593dce">
+        <File Id="MaterialDesignExtensions.dll" Name="MaterialDesignExtensions.dll" Source="$(var.SolakGymDnevnik_TargetDir)MaterialDesignExtensions.dll" />
+      </Component>
+      <Component Id="MaterialDesignColors.dll" Guid="49c25121-f7e7-4333-912e-2c57fd389f90">
+        <File Id="MaterialDesignColors.dll" Name="MaterialDesignColors.dll" Source="$(var.SolakGymDnevnik_TargetDir)MaterialDesignColors.dll" />
+      </Component>
     </ComponentGroup>
   </Fragment>
   <Fragment>
     <DirectoryRef Id="ApplicationProgramsFolder">
       <Component Id="ApplicationShortcut" Guid="563E3BCF-B523-45DE-AAB9-1091437D2BB6">
-        <Shortcut Id="ApplicationStartMenuShortcut" Name="Solak Gym Dnevnik" Description="Solak Gym Dnevnik" Icon="icon.ico" Target="[INSTALLFOLDER]Solak Gym Dnevnik.exe" WorkingDirectory="INSTALLFOLDER" />
+        <Shortcut Id="ApplicationStartMenuShortcut" Name="Solak Gym Dnevnik" Description="SolakGymDnevnik" Icon="icon.ico" Target="[INSTALLFOLDER]SolakGymDnevnik.exe" WorkingDirectory="INSTALLFOLDER" />
         <RemoveFolder Id="RemoveApplicationProgramsFolder" Directory="ApplicationProgramsFolder" On="uninstall" />
-        <RegistryValue Root="HKCU" Key="Software\Solak Gym Dnevnik" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="Software\SolakGymDnevnik" Name="installed" Type="integer" Value="1" KeyPath="yes" />
       </Component>
     </DirectoryRef>
     <DirectoryRef Id="DesktopFolder">
       <Component Id="ApplicationShortcutDesktop" Guid="3B5A57DD-5B27-4092-8638-0793BCD5EB8D">
-        <Shortcut Id="ApplicationDesktopShortcut" Name="Solak Gym Dnevnik" Description="Solak Gym Dnevnik" Icon="icon.ico" IconIndex="0" Target="[INSTALLFOLDER]Solak Gym Dnevnik.exe" WorkingDirectory="INSTALLFOLDER" />
+        <Shortcut Id="ApplicationDesktopShortcut" Name="Solak Gym Dnevnik" Description="SolakGymDnevnik" Icon="icon.ico" IconIndex="0" Target="[INSTALLFOLDER]SolakGymDnevnik.exe" WorkingDirectory="INSTALLFOLDER" />
         <RemoveFolder Id="RemoveDesktopFolder" Directory="DesktopFolder" On="uninstall" />
-        <RegistryValue Root="HKCU" Key="Software\Solak Gym Dnevnik" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+        <RegistryValue Root="HKCU" Key="Software\SolakGymDnevnik" Name="installed" Type="integer" Value="1" KeyPath="yes" />
       </Component>
     </DirectoryRef>
   </Fragment>

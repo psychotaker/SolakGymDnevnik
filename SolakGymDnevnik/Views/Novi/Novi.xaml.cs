@@ -38,18 +38,18 @@ namespace SolakGymDnevnik.Views.Novi
                 if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text))
                 {
 
-                    var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbPhoneNumber.Text), -1);
+                    var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbPhoneNumber.Text), 1);
                     dataContext.Members.InsertOnSubmit(newMemeber);
                     dataContext.SubmitChanges();
                 }
                 else
                 {
-                    MessageBox.Show("Unesite zadana polja","Pogreška");
+                    MessageBox.Show("Unesite zadana polja","Pogreška",MessageBoxButton.OK,MessageBoxImage.Error);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Ime i prezime te broj telefona su obavezni");
+                MessageBox.Show("Ime i prezime te broj telefona su obavezni","Obavezna polja",MessageBoxButton.OK,MessageBoxImage.Exclamation);
             }
 
         }

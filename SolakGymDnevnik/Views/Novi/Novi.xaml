@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SolakGymDnevnik.Views.Novi"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:solakGymDnevnik="clr-namespace:SolakGymDnevnik"
         mc:Ignorable="d"
         Title="Dodaj novog člana" Icon="../../Images/logo_ftz_icon.ico" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
