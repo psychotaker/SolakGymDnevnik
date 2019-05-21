@@ -105,3 +105,16 @@ C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDn
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.csproj.CopyComplete
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.exe
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.pdb
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignColors.dll
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignThemes.Wpf.dll
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignThemes.Wpf.pdb
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignThemes.Wpf.xml
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignXaml.DialogsHelper.dll
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignColors.pdb
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignXaml.DialogsHelper.pdb
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignExtensions.dll
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\ShowMeTheXAML.dll
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignExtensions.xml
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\de\MaterialDesignExtensions.resources.dll
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Uredi\Uredi.g.cs
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Uredi\Uredi.baml

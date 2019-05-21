@@ -1,21 +1,20 @@
-﻿<Window x:Class="SolakGymDnevnik.Views.Novi.Novi"
+﻿<Window x:Class="SolakGymDnevnik.Views.Uredi.Uredi"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SolakGymDnevnik.Views.Novi"
-        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:local="clr-namespace:SolakGymDnevnik.Views.Uredi"
         mc:Ignorable="d"
-        Title="Dodaj novog člana" Icon="../../Images/logo_ftz_icon.ico" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Uredi člana" Icon="../../Images/logo_ftz_icon.ico" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <StackPanel Margin="20">
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" FontFamily="Impact" FontSize="32" Text="Unesite podatke o osobi" VerticalAlignment="Top"/>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" FontFamily="Impact" FontSize="32" Text="Uredite podatke o osobi" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Ime i prezime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <TextBox x:Name="tbName" HorizontalAlignment="Center" Height="40" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
             <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Broj mobitela" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <TextBox x:Name="tbPhoneNumber" HorizontalAlignment="Center" Height="40"  TextWrapping="Wrap" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
             <Button
-                x:Name="button" Content="Dodaj" FontFamily="Impact" FontSize="30" HorizontalAlignment="Center" Margin="0,20,0,0"  VerticalAlignment="Top" Width="120" Height="60" Click="Button_Click"
+                x:Name="button" Content="Uredi" FontFamily="Impact" FontSize="30" HorizontalAlignment="Center" Margin="0,20,0,0"  VerticalAlignment="Top" Width="120" Height="60" Click="Button_Click"
                 Style="{StaticResource MaterialDesignRaisedButton}"
                 ToolTip="Dodaj">
             </Button>

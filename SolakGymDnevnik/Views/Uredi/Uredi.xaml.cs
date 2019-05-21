@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -13,61 +14,48 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace SolakGymDnevnik.Views.Novi
+namespace SolakGymDnevnik.Views.Uredi
 {
     /// <summary>
-    /// Interaction logic for Novi.xaml
+    /// Interaction logic for Uredi.xaml
     /// </summary>
-    public partial class Novi
+    public partial class Uredi : Window
     {
+        private Member selectedMember { get; set; }
         private SolakGymDnevnikDataClassesDataContext dataContext;
-        public Novi()
+        public Uredi()
         {
             InitializeComponent();
-
             string connectionString = ConfigurationManager
                 .ConnectionStrings["SolakGymDnevnik.Properties.Settings.SolakGymDnevnikDbConnectionString"].ConnectionString;
             dataContext = new SolakGymDnevnikDataClassesDataContext(connectionString);
-
         }
 
-        public void AddMember()
+        public void EditMember(string userName,string phoneNumber,int id)
         {
-            try
-            {
-                if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text))
-                {
-
-                    var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbPhoneNumber.Text), -1);
-                    dataContext.Members.InsertOnSubmit(newMemeber);
-                    dataContext.SubmitChanges();
-                }
-                else
-                {
-                    MessageBox.Show("Unesite zadana polja","Pogreška");
-                }
-            }
-            catch (Exception)
-            {
-                MessageBox.Show("Ime i prezime te broj telefona su obavezni");
-            }
-
+            selectedMember = dataContext.Members.FirstOrDefault(m => m.Id.Equals(id));
+            tbName.Text = userName;
+            tbPhoneNumber.Text = phoneNumber;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            AddMember();
-            tbName.Text = null;
-            tbPhoneNumber.Text = null;
+
+            selectedMember.Name = tbName.Text;
+            selectedMember.PhoneNumber = Convert.ToInt32(tbPhoneNumber.Text);
+
+            dataContext.SubmitChanges();
+
+            var listaWindow = new Lista.Lista();
+            listaWindow.Show();
+            this.Close();
         }
 
         private void BtnBack_OnClick(object sender, RoutedEventArgs e)
         {
-            var mainWindow = new Glavni.Glavni();
-            mainWindow.Show();
+            var listaWindow = new Lista.Lista();
+            listaWindow.Show();
             this.Close();
         }
-
-
     }
 }

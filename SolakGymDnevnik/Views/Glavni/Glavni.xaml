@@ -3,38 +3,16 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:MaterialDesignExtensions.Controls;assembly=MaterialDesignExtensions"
+        xmlns:solakGymDnevnik="clr-namespace:SolakGymDnevnik"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.Foreground="{DynamicResource MaterialDesignBody}"
+        Background="{DynamicResource MaterialDesignPaper}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="14"
+        FontFamily="pack://application:,,,/MaterialDesignThemes.Wpf;component/Resources/Roboto/#Roboto"
         mc:Ignorable="d"
         Title="Solak Gym Dnevnik" Icon="../../Images/logo_ftz_icon.ico" Height="720" Width="1280" WindowStartupLocation="CenterScreen" MinWidth="800" MinHeight="600">
-    <Window.Resources>
-        <ControlTemplate x:Key="ButtonControlTemplate1" TargetType="{x:Type Button}">
-            <Grid>
-                <Border CornerRadius="15" Background="White" BorderThickness="3" BorderBrush="#FFD2B407" Padding="2">
-                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
-                </Border>
-                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"></ContentPresenter>
-            </Grid>
-            <ControlTemplate.Triggers>
-                <EventTrigger RoutedEvent="MouseEnter">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.200" Storyboard.TargetProperty="FontSize" To="30"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.200" Storyboard.TargetProperty="Width" To="180"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.200" Storyboard.TargetProperty="Height" To="100"></DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-                <EventTrigger RoutedEvent="MouseLeave">
-                    <BeginStoryboard>
-                        <Storyboard>
-                            <DoubleAnimation Duration="0:0:0.200" Storyboard.TargetProperty="FontSize" To="24"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.200" Storyboard.TargetProperty="Width" To="150"></DoubleAnimation>
-                            <DoubleAnimation Duration="0:0:0.200" Storyboard.TargetProperty="Height" To="80"></DoubleAnimation>
-                        </Storyboard>
-                    </BeginStoryboard>
-                </EventTrigger>
-            </ControlTemplate.Triggers>
-        </ControlTemplate>
-    </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"></ColumnDefinition>
@@ -42,12 +20,29 @@
             <ColumnDefinition Width="200"></ColumnDefinition>
         </Grid.ColumnDefinitions>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0,0,0,50">
-            <Button Name="BtnLista" Content="Lista članova" FontSize="24" FontFamily="Impact" Width="150" Height="80" Margin="5" Click="BtnLista_OnClick" Template="{DynamicResource ButtonControlTemplate1}"></Button>
-            <Button Name="BtnNovi" Content="Novi član" FontSize="24" FontFamily="Impact" Width="150" Height="80" Click="BtnNovi_OnClick" Template="{DynamicResource ButtonControlTemplate1}"></Button>
+            <Button
+                Name="BtnLista" Content="Lista članova" FontSize="24" FontFamily="Impact" Width="160" Height="80" Margin="5" Click="BtnLista_OnClick"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                materialDesign:ShadowAssist.ShadowDepth="Depth2"
+                ToolTip="Lista svih članova">
+            </Button>
+            <Button
+                Name="BtnNovi" Content="Novi član" FontSize="24" FontFamily="Impact" Width="160" Height="80" Margin="5" Click="BtnNovi_OnClick"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                ToolTip="Dodaj novog člana">
+            </Button>
         </StackPanel>
         <StackPanel Grid.Column="2" Margin="0,50,0,0">
-            <Button Visibility="Collapsed" Name="BtnOdjava" Content="Odjava" FontSize="24" FontFamily="Impact" Width="150" Height="80" Margin="5" Template="{DynamicResource ButtonControlTemplate1}" Click="BtnOdjava_Click"></Button>
-            <Button Visibility="Visible" Name="BtnPrijava" Content="Prijava" FontSize="24" FontFamily="Impact" Width="150" Height="80" Margin="5" Click="BtnPrijava_OnClick" Template="{DynamicResource ButtonControlTemplate1}"></Button>
+            <Button
+                Visibility="Collapsed" Name="BtnOdjava" Content="Odjava" FontSize="24" FontFamily="Impact" Width="160" Height="80" Margin="5" Click="BtnOdjava_Click"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                ToolTip="Odjavite se">
+            </Button>
+            <Button
+                Visibility="Visible" Name="BtnPrijava" Content="Prijava" FontSize="24" FontFamily="Impact" Width="160" Height="80" Margin="5" Click="BtnPrijava_OnClick"
+                Style="{StaticResource MaterialDesignRaisedButton}"
+                ToolTip="Prijavite se">
+            </Button>
         </StackPanel>
         <Viewbox Name="vbLogo" Grid.Column="1" Stretch="Uniform" >
             <Canvas Name="Logo" Width="1297" Height="834"  Background="Transparent">
@@ -98,12 +93,12 @@
                 </Path>
                 <Canvas Name="BodyWhite">
                     <Ellipse Canvas.Left="634.3" Width="32" Canvas.Top="198" Height="415.6" Name="Ellipse46" Fill="#FFFFFFFF" StrokeMiterLimit="1.5" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round"/>
-                    <Path Name="LeftArm" Fill="#FFFFFFFF" StrokeThickness="12.5" Stroke="#FFD2B407" StrokeMiterLimit="1.5" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                    <Path Name="LeftArm" Fill="#FFFFFFFF" StrokeThickness="12.5" Stroke="#ffffc107" StrokeMiterLimit="1.5" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
                         <Path.Data>
                             <PathGeometry Figures="M650.451 196.212c-69.21 4.465 -69.954 71.442 -69.954 71.442c-46.139 5.953 0 52.093 0 52.093l-1.707 54.069l8.239 11.585c0 32 -27.497 29.498 -27.497 29.498c-48.372 -78.139 -145.116 -85.581 -145.116 -85.581c-13.396 -50.605 -49.861 -58.047 -49.861 -58.047c17.861 -29.767 54.326 -33.488 54.326 -33.488l29.767 35.721c20.631 1.173 41.243 0.012 52.37 -2.67c-0.467 -18.111 -0.488 -30.876 -0.488 -30.876c0 0 -22.932 -29.751 -94.97 -57.733c0 0 -17.265 -2.977 -85.135 -3.572c0 0 -24.409 1.191 -81.562 29.768c0 0 -23.846 16.669 -7.74 64.297l17.297 46.437l0.595 51.796c0 0 14.288 88.707 116.093 82.753c0 0 42.666 83.249 143.637 99.252c0 0 4.913 8.383 9.104 29.339l100.683 79.384l29.202 -47.247" FillRule="EvenOdd"/>
                         </Path.Data>
                     </Path>
-                    <Path Name="RightArm" Fill="#FFFFFFFF" StrokeThickness="12.5" Stroke="#FFD2B407" StrokeMiterLimit="1.5" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
+                    <Path Name="RightArm" Fill="#FFFFFFFF" StrokeThickness="12.5" Stroke="#ffffc107" StrokeMiterLimit="1.5" StrokeLineJoin="Round" StrokeStartLineCap="Round" StrokeEndLineCap="Round">
                         <Path.Data>
                             <PathGeometry Figures="M650.503 196.212c69.21 4.465 69.954 71.442 69.954 71.442c46.139 5.953 0 52.093 0 52.093l1.707 54.069l-8.239 11.585c0 32 27.497 29.498 27.497 29.498c48.372 -78.139 145.116 -85.581 145.116 -85.581c13.396 -50.605 49.861 -58.047 49.861 -58.047c-17.861 -29.767 -54.326 -33.488 -54.326 -33.488l-29.767 35.721c-20.631 1.173 -41.243 0.012 -52.37 -2.67c0.467 -18.111 0.488 -30.876 0.488 -30.876c0 0 22.932 -29.751 94.97 -57.733c0 0 17.265 -2.977 85.135 -3.572c0 0 24.409 1.191 81.562 29.768c0 0 23.846 16.669 7.74 64.297l-17.297 46.437l-0.595 51.796c0 0 -14.288 88.707 -116.093 82.753c0 0 -42.666 83.249 -143.637 99.252c0 0 -4.913 8.383 -9.104 29.339l-100.683 79.384l-29.202 -47.247" FillRule="EvenOdd"/>
                         </Path.Data>
