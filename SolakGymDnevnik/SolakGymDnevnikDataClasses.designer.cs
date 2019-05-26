@@ -84,7 +84,7 @@ namespace SolakGymDnevnik
 		
 		private string _Name;
 		
-		private int _PhoneNumber;
+		private string _PhoneNumber;
 		
 		private System.DateTime _MembershipDuration;
 		
@@ -98,7 +98,7 @@ namespace SolakGymDnevnik
 	partial void OnIdChanged();
 	partial void OnNameChanging(string value);
 	partial void OnNameChanged();
-	partial void OnPhoneNumberChanging(int value);
+	partial void OnPhoneNumberChanging(string value);
 	partial void OnPhoneNumberChanged();
 	partial void OnMembershipDurationChanging(System.DateTime value);
 	partial void OnMembershipDurationChanged();
@@ -111,7 +111,7 @@ namespace SolakGymDnevnik
 			OnCreated();
 		}
 
-		public Member(string name, int phoneNumber, int membershipDuration)
+		public Member(string name, string phoneNumber, int membershipDuration)
 		{
 			OnCreated();
 			Name = name;
@@ -166,8 +166,8 @@ namespace SolakGymDnevnik
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="Int NOT NULL")]
-		public int PhoneNumber
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_PhoneNumber", DbType="NVarChar(50) NOT NULL", CanBeNull=false)]
+		public string PhoneNumber
 		{
 			get
 			{

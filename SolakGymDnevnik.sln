@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.28803.452
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SolakGymDnevnik", "SolakGymDnevnik\SolakGymDnevnik.csproj", "{3428DC4F-E6D1-4785-86A4-8A732BF53C71}"
 EndProject
-Project("{930C7802-8A8C-48F9-8165-68863BCCD9DD}") = "Setup", "Setup\Setup.wixproj", "{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}"
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SolakGymDnevnikInstaller", "SolakGymDnevnikInstaller\SolakGymDnevnikInstaller.vdproj", "{39E38E01-EEE2-4C3A-9336-F77AE88A528A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,12 +23,11 @@ Global
 		{3428DC4F-E6D1-4785-86A4-8A732BF53C71}.Release|Any CPU.Build.0 = Release|Any CPU
 		{3428DC4F-E6D1-4785-86A4-8A732BF53C71}.Release|x86.ActiveCfg = Release|Any CPU
 		{3428DC4F-E6D1-4785-86A4-8A732BF53C71}.Release|x86.Build.0 = Release|Any CPU
-		{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}.Debug|x86.ActiveCfg = Debug|x86
-		{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}.Debug|x86.Build.0 = Debug|x86
-		{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}.Release|Any CPU.ActiveCfg = Release|x86
-		{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}.Release|x86.ActiveCfg = Release|x86
-		{2AD2AF29-9075-4FD7-BC36-D9A56E07CDA7}.Release|x86.Build.0 = Release|x86
+		{39E38E01-EEE2-4C3A-9336-F77AE88A528A}.Debug|Any CPU.ActiveCfg = Debug
+		{39E38E01-EEE2-4C3A-9336-F77AE88A528A}.Debug|Any CPU.Build.0 = Debug
+		{39E38E01-EEE2-4C3A-9336-F77AE88A528A}.Debug|x86.ActiveCfg = Debug
+		{39E38E01-EEE2-4C3A-9336-F77AE88A528A}.Release|Any CPU.ActiveCfg = Release
+		{39E38E01-EEE2-4C3A-9336-F77AE88A528A}.Release|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

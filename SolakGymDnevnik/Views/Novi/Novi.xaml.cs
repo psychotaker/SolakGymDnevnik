@@ -38,7 +38,7 @@ namespace SolakGymDnevnik.Views.Novi
                 if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text))
                 {
 
-                    var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbPhoneNumber.Text), 1);
+                    var newMemeber = new Member(tbName.Text, tbPhoneNumber.Text, 1);
                     dataContext.Members.InsertOnSubmit(newMemeber);
                     dataContext.SubmitChanges();
                 }

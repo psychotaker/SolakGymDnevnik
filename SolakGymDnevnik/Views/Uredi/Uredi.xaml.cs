@@ -42,7 +42,7 @@ namespace SolakGymDnevnik.Views.Uredi
         {
 
             selectedMember.Name = tbName.Text;
-            selectedMember.PhoneNumber = Convert.ToInt32(tbPhoneNumber.Text);
+            selectedMember.PhoneNumber = tbPhoneNumber.Text;
 
             dataContext.SubmitChanges();
 
