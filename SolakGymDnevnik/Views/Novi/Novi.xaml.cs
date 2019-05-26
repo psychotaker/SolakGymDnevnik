@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -37,28 +38,56 @@ namespace SolakGymDnevnik.Views.Novi
             {
                 if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text))
                 {
-
-                    var newMemeber = new Member(tbName.Text, tbPhoneNumber.Text, 1);
-                    dataContext.Members.InsertOnSubmit(newMemeber);
-                    dataContext.SubmitChanges();
+                    if (CheckInput(tbName.Text, tbPhoneNumber.Text))
+                    {
+                        var newMemeber = new Member(tbName.Text, tbPhoneNumber.Text, 1);
+                        dataContext.Members.InsertOnSubmit(newMemeber);
+                        dataContext.SubmitChanges();
+                        tbName.Text = null;
+                        tbPhoneNumber.Text = null;
+                    }
                 }
                 else
                 {
-                    MessageBox.Show("Unesite zadana polja","Pogreška",MessageBoxButton.OK,MessageBoxImage.Error);
+                    MessageBox.Show("Unesite zadana polja", "Pogreška", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
             catch (Exception)
             {
-                MessageBox.Show("Ime i prezime te broj telefona su obavezni","Obavezna polja",MessageBoxButton.OK,MessageBoxImage.Exclamation);
+                MessageBox.Show("Ime i prezime te broj telefona su obavezni", "Obavezna polja", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
+        }
+
+        public bool CheckInput(string Name, string PhoneNumber)
+        {
+            var inputCorrect = false;
+            Match matchPhoneNumber = Regex.Match(PhoneNumber, @"\d");
+            Match matchName = Regex.Match(Name, @"[A-Z]");
+            if (!matchName.Success && !matchPhoneNumber.Success)
+            {
+                tbNameIncorrect.Visibility = Visibility.Visible;
+                tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchName.Success)
+            {
+                tbNameIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchPhoneNumber.Success || PhoneNumber.Length < 9)
+            {
+                tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                inputCorrect = true;
+            }
+
+            return inputCorrect;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
             AddMember();
-            tbName.Text = null;
-            tbPhoneNumber.Text = null;
         }
 
         private void BtnBack_OnClick(object sender, RoutedEventArgs e)
@@ -68,6 +97,14 @@ namespace SolakGymDnevnik.Views.Novi
             this.Close();
         }
 
+        private void TbPhoneNumber_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tbPhoneNumberIncorrect.Visibility = Visibility.Collapsed;
+        }
 
+        private void TbName_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tbNameIncorrect.Visibility = Visibility.Collapsed;
+        }
     }
 }

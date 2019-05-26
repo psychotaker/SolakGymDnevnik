@@ -47,9 +47,11 @@
         <StackPanel Margin="20">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" FontFamily="Impact" FontSize="32" Text="Prijavite se" VerticalAlignment="Top"/>
             <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Korisničko ime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
-            <TextBox x:Name="tbUserName" HorizontalAlignment="Center" Height="40" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
+            <TextBox x:Name="tbUserName" HorizontalAlignment="Center" Height="40" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" PreviewMouseDown="TbUserName_PreviewMouseDown" Style="{DynamicResource SimpleTextBox}"/>
+            <TextBlock x:Name="tbUserNameIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" Text="Netačno korisničko ime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Lozinka" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <TextBox HorizontalAlignment="Center" Height="40"  TextWrapping="Wrap" TextAlignment="Left" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource TextBoxStyle1}"/>
+            <TextBlock x:Name="tbPasswordIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" Text="Pogrešna lozinka" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <Button
                 x:Name="button" Content="Prijava" FontFamily="Impact" FontSize="30" HorizontalAlignment="Center" Margin="0,20,0,0"  VerticalAlignment="Top" Width="120" Height="60" Click="Button_Click"
                 Style="{StaticResource MaterialDesignRaisedButton}"
@@ -61,6 +63,6 @@
             Style="{StaticResource MaterialDesignRaisedButton}"
             ToolTip="Vratite se nazad">
         </Button>
-        <PasswordBox Name="pbPassword" MaxLength="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,70,0,0" Height="40" Width="202.272" Template="{DynamicResource PasswordBoxControlTemplate1}"/>
+        <PasswordBox Name="pbPassword" MaxLength="15" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Margin="0,70,0,0" Height="40" Width="202.272" PreviewMouseDown="PbPassword_PreviewMouseDown" Template="{DynamicResource PasswordBoxControlTemplate1}"/>
     </Grid>
 </Window>

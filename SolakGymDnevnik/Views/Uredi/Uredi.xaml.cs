@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Configuration;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
@@ -40,15 +41,17 @@ namespace SolakGymDnevnik.Views.Uredi
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
+            if (CheckInput(tbName.Text, tbPhoneNumber.Text))
+            {
+                selectedMember.Name = tbName.Text;
+                selectedMember.PhoneNumber = tbPhoneNumber.Text;
 
-            selectedMember.Name = tbName.Text;
-            selectedMember.PhoneNumber = tbPhoneNumber.Text;
+                dataContext.SubmitChanges();
 
-            dataContext.SubmitChanges();
-
-            var listaWindow = new Lista.Lista();
-            listaWindow.Show();
-            this.Close();
+                var listaWindow = new Lista.Lista();
+                listaWindow.Show();
+                this.Close();
+            }
         }
 
         private void BtnBack_OnClick(object sender, RoutedEventArgs e)
@@ -56,6 +59,31 @@ namespace SolakGymDnevnik.Views.Uredi
             var listaWindow = new Lista.Lista();
             listaWindow.Show();
             this.Close();
+        }
+        public bool CheckInput(string Name, string PhoneNumber)
+        {
+            var inputCorrect = false;
+            Match matchPhoneNumber = Regex.Match(PhoneNumber, @"\d");
+            Match matchName = Regex.Match(Name, @"[A-Z]");
+            if (!matchName.Success && !matchPhoneNumber.Success)
+            {
+                tbNameIncorrect.Visibility = Visibility.Visible;
+                tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchName.Success)
+            {
+                tbNameIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchPhoneNumber.Success || PhoneNumber.Length < 9)
+            {
+                tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                inputCorrect = true;
+            }
+
+            return inputCorrect;
         }
     }
 }

@@ -141,14 +141,6 @@ C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignExtensions.dll
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignThemes.Wpf.dll
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\MaterialDesignXaml.DialogsHelper.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Converters.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Core.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Css.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Dom.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Model.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Rendering.Gdi.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Rendering.Wpf.dll
-C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\SharpVectors.Runtime.dll
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\ShowMeTheXAML.dll
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.xml
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\bin\Debug\EntityFramework.SqlServer.xml

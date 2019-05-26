@@ -10,11 +10,13 @@
         Title="Dodaj novog člana" Icon="../../Images/logo_ftz_icon.ico" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
         <StackPanel Margin="20">
-            <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" FontFamily="Impact" FontSize="32" Text="Unesite podatke o osobi" VerticalAlignment="Top"/>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Ime i prezime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
-            <TextBox x:Name="tbName" HorizontalAlignment="Center" Height="40" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
-            <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Broj mobitela" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
-            <TextBox x:Name="tbPhoneNumber" HorizontalAlignment="Center" Height="40"  TextWrapping="Wrap" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
+            <TextBlock x:Name="title" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" FontFamily="Impact" FontSize="32" Text="Unesite podatke o osobi" VerticalAlignment="Top"/>
+            <TextBlock x:Name="tbNameTitle" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Ime i prezime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
+            <TextBox x:Name="tbName" HorizontalAlignment="Center" Height="40" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" PreviewMouseDown="TbName_PreviewMouseDown" Style="{DynamicResource SimpleTextBox}"/>
+            <TextBlock x:Name="tbNameIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" Text="Neispravan unos imena!" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
+            <TextBlock x:Name="tbPhoneNumberTitle" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Broj mobitela" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
+            <TextBox x:Name="tbPhoneNumber" HorizontalAlignment="Center" Height="40" TextWrapping="Wrap" MaxLength="12" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" PreviewMouseDown="TbPhoneNumber_PreviewMouseDown" Style="{DynamicResource SimpleTextBox}"/>
+            <TextBlock x:Name="tbPhoneNumberIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" Text="Unešeni broj mobitela nije ispravan!" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <Button
                 x:Name="button" Content="Dodaj" FontFamily="Impact" FontSize="30" HorizontalAlignment="Center" Margin="0,20,0,0"  VerticalAlignment="Top" Width="120" Height="60" Click="Button_Click"
                 Style="{StaticResource MaterialDesignRaisedButton}"
