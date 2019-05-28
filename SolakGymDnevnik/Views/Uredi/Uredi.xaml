@@ -5,14 +5,17 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:SolakGymDnevnik.Views.Uredi"
         mc:Ignorable="d"
-        Title="Uredi člana" Icon="../../Images/logo_ftz_icon.ico" Height="450" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Uredi člana" Icon="../../Images/logo_ftz_icon.ico" Height="500" Width="600" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
     <Grid>
-        <StackPanel Margin="20">
+        <StackPanel Margin="10">
             <TextBlock x:Name="textBlock" HorizontalAlignment="Center" Margin="0,0,0,30" TextWrapping="Wrap" FontFamily="Impact" FontSize="32" Text="Uredite podatke o osobi" VerticalAlignment="Top"/>
-            <TextBlock x:Name="textBlock1" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Ime i prezime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
+            <TextBlock x:Name="tbMembershipNumberTitle" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Text="Članski broj" TextAlignment="Center" Height="25.303" Width="102"/>
+            <TextBox x:Name="tbMembershipNumber" HorizontalAlignment="Center" Height="40" MaxLength="6" TextAlignment="Center" Padding="5" Width="90" PreviewMouseDown="TbMembershipNumber_PreviewMouseDown" Style="{DynamicResource SimpleTextBox}"/>
+            <TextBlock x:Name="tbMembershipNumberIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" TextWrapping="Wrap" Text="Unesi članski broj!" VerticalAlignment="Top" Height="25.303" Width="150"/>
+            <TextBlock x:Name="tbNameTitle" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Ime i prezime" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <TextBox x:Name="tbName" HorizontalAlignment="Center" Height="40" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
             <TextBlock x:Name="tbNameIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" Text="Neispravan unos imena!" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
-            <TextBlock x:Name="textBlock1_Copy" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Broj mobitela" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
+            <TextBlock x:Name="tbPhoneNumberTitle" HorizontalAlignment="Center" FontFamily="Impact" FontSize="18" Margin="0,20,0,0" TextWrapping="Wrap" Text="Broj mobitela" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <TextBox x:Name="tbPhoneNumber" HorizontalAlignment="Center" Height="40"  TextWrapping="Wrap" TextAlignment="Left" Padding="5" VerticalAlignment="Top" Width="202.272" Style="{DynamicResource SimpleTextBox}"/>
             <TextBlock x:Name="tbPhoneNumberIncorrect" Visibility="Collapsed" HorizontalAlignment="Center" FontSize="12" Foreground="Red" TextAlignment="Center" Text="Unešeni broj mobitela nije ispravan!" VerticalAlignment="Top" Height="25.303" Width="202.272"/>
             <Button
@@ -22,9 +25,9 @@
             </Button>
         </StackPanel>
         <Button
-            Grid.ColumnSpan="2" Grid.Row="1" Name="BtnBack" Content="Nazad" Click="BtnBack_OnClick" Width="70" Height="40" FontSize="12" HorizontalAlignment="Left"  Margin="10,350,0,0"
+            Name="BtnBack" Content="Nazad" Click="BtnBack_OnClick" Width="80" Height="30" HorizontalAlignment="Left" Margin="10,420,0,0"
             Style="{StaticResource MaterialDesignRaisedButton}"
-            ToolTip="Vrati nazad">
+            ToolTip="Vratite se nazad">
         </Button>
     </Grid>
 </Window>

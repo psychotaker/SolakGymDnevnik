@@ -17,7 +17,7 @@ namespace SolakGymDnevnik
         public Admin()
         {
             Name = "adminedin";
-            Password = "piq23svj05";
+            Password = "adminsgd";
         }
 
 

@@ -59,7 +59,7 @@
             </Button>
         </StackPanel>
         <Button
-            Name="BtnBack" Content="Nazad" Click="BtnBack_OnClick" Width="80" Height="30" HorizontalAlignment="Left" Margin="10,350,0,0"
+            Name="BtnBack" Content="Nazad" Click="BtnBack_OnClick" Width="80" Height="30" HorizontalAlignment="Left" Margin="10,370,0,0"
             Style="{StaticResource MaterialDesignRaisedButton}"
             ToolTip="Vratite se nazad">
         </Button>

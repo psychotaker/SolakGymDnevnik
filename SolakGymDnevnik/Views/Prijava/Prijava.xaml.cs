@@ -46,21 +46,6 @@ namespace SolakGymDnevnik.Views.Prijava
                     glavni.Show();
                     this.Close();
                 }
-                //if (Admin.IsAdmin(tbUserName.Text, pbPassword.Password))
-                //{
-                //    MessageBox.Show("Prijavljeni ste kao administarator", "Prijava uspješna", MessageBoxButton.OK,
-                //        MessageBoxImage.Information);
-                //    var glavni = new Glavni.Glavni();
-                //    glavni.BtnPrijava.Visibility = Visibility.Collapsed;
-                //    glavni.BtnOdjava.Visibility = Visibility.Visible;
-                //    glavni.Show();
-                //    this.Close();
-                //}
-                //else
-                //{
-                //    MessageBox.Show("Podaci unešeni u zadana polja nisu ispravni", "Prijava neuspješna",
-                //        MessageBoxButton.OK,MessageBoxImage.Warning);
-                //}
             }
             else
             {

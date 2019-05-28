@@ -29,21 +29,20 @@ namespace SolakGymDnevnik.Views.Novi
             string connectionString = ConfigurationManager
                 .ConnectionStrings["SolakGymDnevnik.Properties.Settings.SolakGymDnevnikDbConnectionString"].ConnectionString;
             dataContext = new SolakGymDnevnikDataClassesDataContext(connectionString);
-
         }
-
         public void AddMember()
         {
             try
             {
                 if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text) && !String.IsNullOrWhiteSpace(tbMonth.Text))
                 {
-                    if (CheckInput(tbName.Text, tbPhoneNumber.Text,tbMonth.Text))
+                    if (CheckInput(tbName.Text, tbMembershipNumber.Text, tbPhoneNumber.Text,tbMonth.Text))
                     {
-                        var newMemeber = new Member(tbName.Text, tbPhoneNumber.Text, Convert.ToInt32(tbMonth.Text));
+                        var newMemeber = new Member(tbName.Text, Convert.ToInt32(tbMembershipNumber.Text), tbPhoneNumber.Text, Convert.ToInt32(tbMonth.Text));
                         dataContext.Members.InsertOnSubmit(newMemeber);
                         dataContext.SubmitChanges();
                         tbName.Text = null;
+                        tbMembershipNumber.Text = null;
                         tbPhoneNumber.Text = null;
                         tbMonth.Text = null;
                     }
@@ -60,16 +59,20 @@ namespace SolakGymDnevnik.Views.Novi
 
         }
 
-        public bool CheckInput(string Name, string PhoneNumber,string Month)
+        public bool CheckInput(string Name, string MembershipNumber, string PhoneNumber,string Month)
         {
             var inputCorrect = false;
+            bool contains = dataContext.Members.AsEnumerable().Any(row => Convert.ToInt32(MembershipNumber) == row.MembershipNumber);
             Match matchPhoneNumber = Regex.Match(PhoneNumber, @"\d");
             Match matchName = Regex.Match(Name, @"[A-Z]");
+            Match matchMembershipNumber = Regex.Match(MembershipNumber, @"\d");
             Match matchMonth = Regex.Match(Month, @"\d");
             var MonthValue = Convert.ToInt32(Month);
-            if (!matchName.Success && !matchPhoneNumber.Success && !matchMonth.Success)
+            var MembershipNumberValue = Convert.ToInt32(MembershipNumber);
+            if (!matchName.Success && !matchMembershipNumber.Success && !matchPhoneNumber.Success && !matchMonth.Success)
             {
                 tbNameIncorrect.Visibility = Visibility.Visible;
+                tbMembershipNumberIncorrect.Visibility = Visibility.Visible;
                 tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
                 tbMonthIncorrect.Visibility = Visibility.Visible;
             }
@@ -84,6 +87,16 @@ namespace SolakGymDnevnik.Views.Novi
             else if (!matchMonth.Success || !(MonthValue <= 12 && MonthValue >= 1))
             {
                 tbMonthIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchMembershipNumber.Success || MembershipNumberValue < 1)
+            {
+                tbMembershipNumberIncorrect.Text = "Unesi članski broj!";
+                tbMembershipNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (contains)
+            {
+                tbMembershipNumberIncorrect.Text = "Članski broj zauzet!";
+                tbMembershipNumberIncorrect.Visibility = Visibility.Visible;
             }
             else
             {
@@ -118,6 +131,11 @@ namespace SolakGymDnevnik.Views.Novi
         private void TbMonth_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             tbMonthIncorrect.Visibility = Visibility.Collapsed;
+        }
+
+        private void TbMembershipNumber_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tbMembershipNumberIncorrect.Visibility = Visibility.Collapsed;
         }
     }
 }

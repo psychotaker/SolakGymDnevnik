@@ -20,7 +20,7 @@
             </Button>
         </StackPanel>
         <Button
-            Grid.ColumnSpan="2" Grid.Row="1" Name="BtnBack" Content="Nazad" Click="BtnBack_OnClick" Width="70" Height="25" FontSize="12" HorizontalAlignment="Left"  Margin="10,270,0,0"
+            Grid.ColumnSpan="2" Grid.Row="1" Name="BtnBack" Content="Nazad" Click="BtnBack_OnClick" Width="80" Height="30" FontSize="12" HorizontalAlignment="Left"  Margin="10,270,0,0"
             Style="{StaticResource MaterialDesignRaisedButton}"
             ToolTip="Vrati nazad">
         </Button>

@@ -28,12 +28,12 @@ namespace SolakGymDnevnik
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
 		
-	#region Extensibility Method Definitions
-	partial void OnCreated();
-	partial void InsertMember(Member instance);
-	partial void UpdateMember(Member instance);
-	partial void DeleteMember(Member instance);
-	#endregion
+    #region Extensibility Method Definitions
+    partial void OnCreated();
+    partial void InsertMember(Member instance);
+    partial void UpdateMember(Member instance);
+    partial void DeleteMember(Member instance);
+    #endregion
 		
 		public SolakGymDnevnikDataClassesDataContext() : 
 				base(global::SolakGymDnevnik.Properties.Settings.Default.SolakGymDnevnikDbConnectionString, mappingSource)
@@ -90,43 +90,48 @@ namespace SolakGymDnevnik
 		
 		private int _ExpirationTime;
 		
-	#region Extensibility Method Definitions
-	partial void OnLoaded();
-	partial void OnValidate(System.Data.Linq.ChangeAction action);
-	partial void OnCreated();
-	partial void OnIdChanging(int value);
-	partial void OnIdChanged();
-	partial void OnNameChanging(string value);
-	partial void OnNameChanged();
-	partial void OnPhoneNumberChanging(string value);
-	partial void OnPhoneNumberChanged();
-	partial void OnMembershipDurationChanging(System.DateTime value);
-	partial void OnMembershipDurationChanged();
-	partial void OnExpirationTimeChanging(int value);
-	partial void OnExpirationTimeChanged();
-	#endregion
+		private int _MembershipNumber;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnIdChanging(int value);
+    partial void OnIdChanged();
+    partial void OnNameChanging(string value);
+    partial void OnNameChanged();
+    partial void OnPhoneNumberChanging(string value);
+    partial void OnPhoneNumberChanged();
+    partial void OnMembershipDurationChanging(System.DateTime value);
+    partial void OnMembershipDurationChanged();
+    partial void OnExpirationTimeChanging(int value);
+    partial void OnExpirationTimeChanged();
+    partial void OnMembershipNumberChanging(int value);
+    partial void OnMembershipNumberChanged();
+    #endregion
 		
 		public Member()
 		{
 			OnCreated();
 		}
 
-		public Member(string name, string phoneNumber, int membershipDuration)
-		{
-			OnCreated();
-			Name = name;
-			PhoneNumber = phoneNumber;
-			ExtendtMembershipByMonth(membershipDuration);
-		}
+        public Member(string name, int membershipNumber, string phoneNumber, int membershipDuration)
+        {
+            OnCreated();
+            Name = name;
+            MembershipNumber = membershipNumber;
+            PhoneNumber = phoneNumber;
+            ExtendtMembershipByMonth(membershipDuration);
+        }
 
-		public void ExtendtMembershipByMonth(int membershipDuration)
-		{
-			MembershipDuration = DateTime.Today.AddMonths(membershipDuration);
-			ExpirationTime = (MembershipDuration - DateTime.Today).Days;
+        public void ExtendtMembershipByMonth(int membershipDuration)
+        {
+            MembershipDuration = DateTime.Today.AddMonths(membershipDuration);
+            ExpirationTime = (MembershipDuration - DateTime.Today).Days;
 
-		}
+        }
 
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+        [global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_Id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
 		public int Id
 		{
 			get
@@ -222,6 +227,26 @@ namespace SolakGymDnevnik
 					this._ExpirationTime = value;
 					this.SendPropertyChanged("ExpirationTime");
 					this.OnExpirationTimeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_MembershipNumber", DbType="Int NOT NULL")]
+		public int MembershipNumber
+		{
+			get
+			{
+				return this._MembershipNumber;
+			}
+			set
+			{
+				if ((this._MembershipNumber != value))
+				{
+					this.OnMembershipNumberChanging(value);
+					this.SendPropertyChanging();
+					this._MembershipNumber = value;
+					this.SendPropertyChanged("MembershipNumber");
+					this.OnMembershipNumberChanged();
 				}
 			}
 		}

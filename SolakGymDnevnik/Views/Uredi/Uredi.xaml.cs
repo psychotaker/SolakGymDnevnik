@@ -32,18 +32,20 @@ namespace SolakGymDnevnik.Views.Uredi
             dataContext = new SolakGymDnevnikDataClassesDataContext(connectionString);
         }
 
-        public void EditMember(string userName,string phoneNumber,int id)
+        public void EditMember(string userName,int membershipNumber, string phoneNumber,int id)
         {
             selectedMember = dataContext.Members.FirstOrDefault(m => m.Id.Equals(id));
             tbName.Text = userName;
+            tbMembershipNumber.Text = membershipNumber.ToString();
             tbPhoneNumber.Text = phoneNumber;
         }
 
         private void Button_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckInput(tbName.Text, tbPhoneNumber.Text))
+            if (CheckInput(tbName.Text,tbMembershipNumber.Text, tbPhoneNumber.Text))
             {
                 selectedMember.Name = tbName.Text;
+                selectedMember.MembershipNumber = Convert.ToInt32(tbMembershipNumber.Text);
                 selectedMember.PhoneNumber = tbPhoneNumber.Text;
 
                 dataContext.SubmitChanges();
@@ -60,12 +62,21 @@ namespace SolakGymDnevnik.Views.Uredi
             listaWindow.Show();
             this.Close();
         }
-        public bool CheckInput(string Name, string PhoneNumber)
+
+        private void TbMembershipNumber_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tbMembershipNumberIncorrect.Visibility = Visibility.Collapsed;
+        }
+
+        public bool CheckInput(string Name, string MembershipNumber, string PhoneNumber)
         {
             var inputCorrect = false;
+            bool contains = dataContext.Members.AsEnumerable().Any(row => Convert.ToInt32(MembershipNumber) == row.MembershipNumber);
             Match matchPhoneNumber = Regex.Match(PhoneNumber, @"\d");
             Match matchName = Regex.Match(Name, @"[A-Z]");
-            if (!matchName.Success && !matchPhoneNumber.Success)
+            Match matchMembershipNumber = Regex.Match(MembershipNumber, @"\d");
+            var MembershipNumberValue = Convert.ToInt32(MembershipNumber);
+            if (!matchName.Success && !matchPhoneNumber.Success && !matchMembershipNumber.Success)
             {
                 tbNameIncorrect.Visibility = Visibility.Visible;
                 tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
@@ -77,6 +88,16 @@ namespace SolakGymDnevnik.Views.Uredi
             else if (!matchPhoneNumber.Success || PhoneNumber.Length < 9)
             {
                 tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchMembershipNumber.Success || MembershipNumberValue < 1)
+            {
+                tbMembershipNumberIncorrect.Text = "Unesi članski broj!";
+                tbMembershipNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (contains && selectedMember.MembershipNumber != Convert.ToInt32(MembershipNumber))
+            {
+                tbMembershipNumberIncorrect.Text = "Članski broj zauzet!";
+                tbMembershipNumberIncorrect.Visibility = Visibility.Visible;
             }
             else
             {

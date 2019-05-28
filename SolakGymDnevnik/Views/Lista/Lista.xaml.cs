@@ -105,7 +105,7 @@ namespace SolakGymDnevnik.Views.Lista
             {
 
                 var selectedValid = (Member)lbClanovi.SelectedValue;
-                urediWindow.EditMember(selectedValid.Name, selectedValid.PhoneNumber.ToString(), selectedValid.Id);
+                urediWindow.EditMember(selectedValid.Name,selectedValid.MembershipNumber ,selectedValid.PhoneNumber, selectedValid.Id);
                 urediWindow.Show();
                 Close();
             }
@@ -113,7 +113,7 @@ namespace SolakGymDnevnik.Views.Lista
             {
 
                 var selectedInvalid = (Member)lbIstekliClanovi.SelectedValue;
-                urediWindow.EditMember(selectedInvalid.Name, selectedInvalid.PhoneNumber.ToString(), selectedInvalid.Id);
+                urediWindow.EditMember(selectedInvalid.Name,selectedInvalid.MembershipNumber, selectedInvalid.PhoneNumber, selectedInvalid.Id);
                 urediWindow.Show();
                 Close();
             }

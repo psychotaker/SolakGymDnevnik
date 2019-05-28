@@ -289,6 +289,8 @@ namespace SolakGymDnevnik {
             
             private global::System.Data.DataColumn columnExpirationTime;
             
+            private global::System.Data.DataColumn columnMembershipNumber;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public MemberDataTable() {
@@ -364,6 +366,14 @@ namespace SolakGymDnevnik {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn MembershipNumberColumn {
+                get {
+                    return this.columnMembershipNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -399,14 +409,15 @@ namespace SolakGymDnevnik {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public MemberRow AddMemberRow(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime) {
+            public MemberRow AddMemberRow(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime, int MembershipNumber) {
                 MemberRow rowMemberRow = ((MemberRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
                         Name,
                         PhoneNumber,
                         MembershipDuration,
-                        ExpirationTime};
+                        ExpirationTime,
+                        MembershipNumber};
                 rowMemberRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowMemberRow);
                 return rowMemberRow;
@@ -441,6 +452,7 @@ namespace SolakGymDnevnik {
                 this.columnPhoneNumber = base.Columns["PhoneNumber"];
                 this.columnMembershipDuration = base.Columns["MembershipDuration"];
                 this.columnExpirationTime = base.Columns["ExpirationTime"];
+                this.columnMembershipNumber = base.Columns["MembershipNumber"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -456,6 +468,8 @@ namespace SolakGymDnevnik {
                 base.Columns.Add(this.columnMembershipDuration);
                 this.columnExpirationTime = new global::System.Data.DataColumn("ExpirationTime", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnExpirationTime);
+                this.columnMembershipNumber = new global::System.Data.DataColumn("MembershipNumber", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMembershipNumber);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnId}, true));
                 this.columnId.AutoIncrement = true;
@@ -470,6 +484,7 @@ namespace SolakGymDnevnik {
                 this.columnPhoneNumber.MaxLength = 50;
                 this.columnMembershipDuration.AllowDBNull = false;
                 this.columnExpirationTime.AllowDBNull = false;
+                this.columnMembershipNumber.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -664,6 +679,17 @@ namespace SolakGymDnevnik {
                     this[this.tableMember.ExpirationTimeColumn] = value;
                 }
             }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int MembershipNumber {
+                get {
+                    return ((int)(this[this.tableMember.MembershipNumberColumn]));
+                }
+                set {
+                    this[this.tableMember.MembershipNumberColumn] = value;
+                }
+            }
         }
         
         /// <summary>
@@ -830,41 +856,44 @@ namespace SolakGymDnevnik.SolakGymDnevnikDbDataSetTableAdapters {
             tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
             tableMapping.ColumnMappings.Add("MembershipDuration", "MembershipDuration");
             tableMapping.ColumnMappings.Add("ExpirationTime", "ExpirationTime");
+            tableMapping.ColumnMappings.Add("MembershipNumber", "MembershipNumber");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[Member] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_N" +
-                "ame) AND ([PhoneNumber] = @Original_PhoneNumber) AND ([MembershipDuration] = @Or" +
-                "iginal_MembershipDuration) AND ([ExpirationTime] = @Original_ExpirationTime))";
+            this._adapter.DeleteCommand.CommandText = @"DELETE FROM [dbo].[Member] WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ([PhoneNumber] = @Original_PhoneNumber) AND ([MembershipDuration] = @Original_MembershipDuration) AND ([ExpirationTime] = @Original_ExpirationTime) AND ([MembershipNumber] = @Original_MembershipNumber))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhoneNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MembershipDuration", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipDuration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExpirationTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MembershipNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Member] ([Name], [PhoneNumber], [MembershipDuration], [ExpirationTime]) VALUES (@Name, @PhoneNumber, @MembershipDuration, @ExpirationTime);
-SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHERE (Id = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[Member] ([Name], [PhoneNumber], [MembershipDuration], [ExpirationTime], [MembershipNumber]) VALUES (@Name, @PhoneNumber, @MembershipDuration, @ExpirationTime, @MembershipNumber);
+SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime, MembershipNumber FROM Member WHERE (Id = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MembershipDuration", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipDuration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpirationTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MembershipNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Member] SET [Name] = @Name, [PhoneNumber] = @PhoneNumber, [MembershipDuration] = @MembershipDuration, [ExpirationTime] = @ExpirationTime WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ([PhoneNumber] = @Original_PhoneNumber) AND ([MembershipDuration] = @Original_MembershipDuration) AND ([ExpirationTime] = @Original_ExpirationTime));
-SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHERE (Id = @Id)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[Member] SET [Name] = @Name, [PhoneNumber] = @PhoneNumber, [MembershipDuration] = @MembershipDuration, [ExpirationTime] = @ExpirationTime, [MembershipNumber] = @MembershipNumber WHERE (([Id] = @Original_Id) AND ([Name] = @Original_Name) AND ([PhoneNumber] = @Original_PhoneNumber) AND ([MembershipDuration] = @Original_MembershipDuration) AND ([ExpirationTime] = @Original_ExpirationTime) AND ([MembershipNumber] = @Original_MembershipNumber));
+SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime, MembershipNumber FROM Member WHERE (Id = @Id)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MembershipDuration", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipDuration", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ExpirationTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationTime", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MembershipNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Id", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Name", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhoneNumber", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MembershipDuration", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipDuration", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ExpirationTime", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ExpirationTime", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_MembershipNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MembershipNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Id", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
@@ -881,7 +910,8 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM dbo.Member";
+            this._commandCollection[0].CommandText = "SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime, MembershipNumbe" +
+                "r FROM dbo.Member";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         
@@ -942,7 +972,7 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_Id, string Original_Name, string Original_PhoneNumber, System.DateTime Original_MembershipDuration, int Original_ExpirationTime) {
+        public virtual int Delete(int Original_Id, string Original_Name, string Original_PhoneNumber, System.DateTime Original_MembershipDuration, int Original_ExpirationTime, int Original_MembershipNumber) {
             this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
@@ -958,6 +988,7 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
             }
             this.Adapter.DeleteCommand.Parameters[3].Value = ((System.DateTime)(Original_MembershipDuration));
             this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_ExpirationTime));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_MembershipNumber));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -978,7 +1009,7 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime) {
+        public virtual int Insert(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime, int MembershipNumber) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -993,6 +1024,7 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
             }
             this.Adapter.InsertCommand.Parameters[2].Value = ((System.DateTime)(MembershipDuration));
             this.Adapter.InsertCommand.Parameters[3].Value = ((int)(ExpirationTime));
+            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(MembershipNumber));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1013,7 +1045,7 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime, int Original_Id, string Original_Name, string Original_PhoneNumber, System.DateTime Original_MembershipDuration, int Original_ExpirationTime, int Id) {
+        public virtual int Update(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime, int MembershipNumber, int Original_Id, string Original_Name, string Original_PhoneNumber, System.DateTime Original_MembershipDuration, int Original_ExpirationTime, int Original_MembershipNumber, int Id) {
             if ((Name == null)) {
                 throw new global::System.ArgumentNullException("Name");
             }
@@ -1028,22 +1060,24 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
             }
             this.Adapter.UpdateCommand.Parameters[2].Value = ((System.DateTime)(MembershipDuration));
             this.Adapter.UpdateCommand.Parameters[3].Value = ((int)(ExpirationTime));
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(Original_Id));
+            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(MembershipNumber));
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(Original_Id));
             if ((Original_Name == null)) {
                 throw new global::System.ArgumentNullException("Original_Name");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[5].Value = ((string)(Original_Name));
+                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_Name));
             }
             if ((Original_PhoneNumber == null)) {
                 throw new global::System.ArgumentNullException("Original_PhoneNumber");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[6].Value = ((string)(Original_PhoneNumber));
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Original_PhoneNumber));
             }
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((System.DateTime)(Original_MembershipDuration));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ExpirationTime));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Id));
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((System.DateTime)(Original_MembershipDuration));
+            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_ExpirationTime));
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_MembershipNumber));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(Id));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1064,8 +1098,8 @@ SELECT Id, Name, PhoneNumber, MembershipDuration, ExpirationTime FROM Member WHE
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime, int Original_Id, string Original_Name, string Original_PhoneNumber, System.DateTime Original_MembershipDuration, int Original_ExpirationTime) {
-            return this.Update(Name, PhoneNumber, MembershipDuration, ExpirationTime, Original_Id, Original_Name, Original_PhoneNumber, Original_MembershipDuration, Original_ExpirationTime, Original_Id);
+        public virtual int Update(string Name, string PhoneNumber, System.DateTime MembershipDuration, int ExpirationTime, int MembershipNumber, int Original_Id, string Original_Name, string Original_PhoneNumber, System.DateTime Original_MembershipDuration, int Original_ExpirationTime, int Original_MembershipNumber) {
+            return this.Update(Name, PhoneNumber, MembershipDuration, ExpirationTime, MembershipNumber, Original_Id, Original_Name, Original_PhoneNumber, Original_MembershipDuration, Original_ExpirationTime, Original_MembershipNumber, Original_Id);
         }
     }
     
