@@ -102,7 +102,7 @@ namespace SolakGymDnevnik
         public override void Uninstall(IDictionary savedState)
         {
             base.Uninstall(savedState);
-            ExecuteSql("master", "DROP DATABASE SolakGymDnevnikDb");
+            //ExecuteSql("master", "DROP DATABASE SolakGymDnevnikDb");
         }
 
         public static bool CheckDatabaseExists(string connectionString, string databaseName)

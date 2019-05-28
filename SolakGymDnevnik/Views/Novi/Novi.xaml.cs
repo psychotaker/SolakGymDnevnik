@@ -36,15 +36,16 @@ namespace SolakGymDnevnik.Views.Novi
         {
             try
             {
-                if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text))
+                if (!String.IsNullOrWhiteSpace(tbName.Text) && !String.IsNullOrWhiteSpace(tbPhoneNumber.Text) && !String.IsNullOrWhiteSpace(tbMonth.Text))
                 {
-                    if (CheckInput(tbName.Text, tbPhoneNumber.Text))
+                    if (CheckInput(tbName.Text, tbPhoneNumber.Text,tbMonth.Text))
                     {
-                        var newMemeber = new Member(tbName.Text, tbPhoneNumber.Text, 1);
+                        var newMemeber = new Member(tbName.Text, tbPhoneNumber.Text, Convert.ToInt32(tbMonth.Text));
                         dataContext.Members.InsertOnSubmit(newMemeber);
                         dataContext.SubmitChanges();
                         tbName.Text = null;
                         tbPhoneNumber.Text = null;
+                        tbMonth.Text = null;
                     }
                 }
                 else
@@ -54,20 +55,23 @@ namespace SolakGymDnevnik.Views.Novi
             }
             catch (Exception)
             {
-                MessageBox.Show("Ime i prezime te broj telefona su obavezni", "Obavezna polja", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                MessageBox.Show("Ime i prezime, broj telefona i mjeseci su obavezni", "Obavezna polja", MessageBoxButton.OK, MessageBoxImage.Exclamation);
             }
 
         }
 
-        public bool CheckInput(string Name, string PhoneNumber)
+        public bool CheckInput(string Name, string PhoneNumber,string Month)
         {
             var inputCorrect = false;
             Match matchPhoneNumber = Regex.Match(PhoneNumber, @"\d");
             Match matchName = Regex.Match(Name, @"[A-Z]");
-            if (!matchName.Success && !matchPhoneNumber.Success)
+            Match matchMonth = Regex.Match(Month, @"\d");
+            var MonthValue = Convert.ToInt32(Month);
+            if (!matchName.Success && !matchPhoneNumber.Success && !matchMonth.Success)
             {
                 tbNameIncorrect.Visibility = Visibility.Visible;
                 tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+                tbMonthIncorrect.Visibility = Visibility.Visible;
             }
             else if (!matchName.Success)
             {
@@ -76,6 +80,10 @@ namespace SolakGymDnevnik.Views.Novi
             else if (!matchPhoneNumber.Success || PhoneNumber.Length < 9)
             {
                 tbPhoneNumberIncorrect.Visibility = Visibility.Visible;
+            }
+            else if (!matchMonth.Success || !(MonthValue <= 12 && MonthValue >= 1))
+            {
+                tbMonthIncorrect.Visibility = Visibility.Visible;
             }
             else
             {
@@ -105,6 +113,11 @@ namespace SolakGymDnevnik.Views.Novi
         private void TbName_PreviewMouseDown(object sender, MouseButtonEventArgs e)
         {
             tbNameIncorrect.Visibility = Visibility.Collapsed;
+        }
+
+        private void TbMonth_PreviewMouseDown(object sender, MouseButtonEventArgs e)
+        {
+            tbMonthIncorrect.Visibility = Visibility.Collapsed;
         }
     }
 }

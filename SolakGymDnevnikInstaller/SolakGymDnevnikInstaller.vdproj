@@ -16,19 +16,19 @@
         "Entry"
         {
         "MsmKey" = "8:_051C16B38332B5FC57947507F7050207"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_50F862D206E77C2A148C98484323B4CB"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6593B97A519E99F4F554C82EDF32AC6B"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -40,13 +40,13 @@
         "Entry"
         {
         "MsmKey" = "8:_6D7CA0835EA25DF2F6D41CE52985F900"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
         "MsmKey" = "8:_6D8793896AC57CB9263FDEE42D6A7648"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -58,7 +58,7 @@
         "Entry"
         {
         "MsmKey" = "8:_730ED23710C7F7616413DBAAB3C47475"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -69,26 +69,32 @@
         }
         "Entry"
         {
-        "MsmKey" = "8:_CA77E2A72D95EC324542E190F2C2401A"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_D90F722531894EE5FA7AFFE8AC1573D3"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "MsmKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "OwnerKey" = "8:_UNDEFINED"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
         {
+        "MsmKey" = "8:_CA77E2A72D95EC324542E190F2C2401A"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_D90F722531894EE5FA7AFFE8AC1573D3"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
         "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_DA7D99101090457E9FA079D5944D8071"
+        "OwnerKey" = "8:_50F862D206E77C2A148C98484323B4CB"
+        "MsmSig" = "8:_UNDEFINED"
+        }
+        "Entry"
+        {
+        "MsmKey" = "8:_UNDEFINED"
+        "OwnerKey" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
         "MsmSig" = "8:_UNDEFINED"
         }
         "Entry"
@@ -131,12 +137,6 @@
         {
         "MsmKey" = "8:_UNDEFINED"
         "OwnerKey" = "8:_6593B97A519E99F4F554C82EDF32AC6B"
-        "MsmSig" = "8:_UNDEFINED"
-        }
-        "Entry"
-        {
-        "MsmKey" = "8:_UNDEFINED"
-        "OwnerKey" = "8:_50F862D206E77C2A148C98484323B4CB"
         "MsmSig" = "8:_UNDEFINED"
         }
     }
@@ -208,11 +208,6 @@
                     "Name" = "8:Microsoft .NET Framework 4.6.1 (x86 and x64)"
                     "ProductCode" = "8:.NETFramework,Version=v4.6.1"
                     }
-                    "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:.NETFramework,Version=v4.7.2"
-                    {
-                    "Name" = "8:Microsoft .NET Framework 4.7.2 (x86 and x64)"
-                    "ProductCode" = "8:.NETFramework,Version=v4.7.2"
-                    }
                     "{EDC2488A-8267-493A-A98E-7D9C3B36CDF3}:Microsoft.SqlServer.Express.11.0"
                     {
                     "Name" = "8:SQL Server 2012 Express"
@@ -226,31 +221,31 @@
     {
         "CustomAction"
         {
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_374755498F8D4699AA121EAAC5B96C41"
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_A424F755374E441D90D46DD2593C3B3D"
             {
             "Name" = "8:Primary output from SolakGymDnevnik (Active)"
             "Condition" = "8:"
-            "Object" = "8:_DA7D99101090457E9FA079D5944D8071"
-            "FileType" = "3:2"
-            "InstallAction" = "3:4"
-            "Arguments" = "8:"
-            "EntryPoint" = "8:"
-            "Sequence" = "3:1"
-            "Identifier" = "8:_11BF8D26_218E_42C1_8A93_9DC43B5B4F14"
-            "InstallerClass" = "11:TRUE"
-            "CustomActionData" = "8:"
-            }
-            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_7BD3E0AF32934742ADD65A47C52BEEC7"
-            {
-            "Name" = "8:Primary output from SolakGymDnevnik (Active)"
-            "Condition" = "8:"
-            "Object" = "8:_DA7D99101090457E9FA079D5944D8071"
+            "Object" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
             "FileType" = "3:2"
             "InstallAction" = "3:1"
             "Arguments" = "8:"
             "EntryPoint" = "8:"
             "Sequence" = "3:1"
-            "Identifier" = "8:_A6D902A1_77B4_484C_B665_15C0C2BEF025"
+            "Identifier" = "8:_9ED0EAC2_4279_4DBA_92FC_641193A108D7"
+            "InstallerClass" = "11:TRUE"
+            "CustomActionData" = "8:"
+            }
+            "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_B8266E7B61C54568984BBCF140182555"
+            {
+            "Name" = "8:Primary output from SolakGymDnevnik (Active)"
+            "Condition" = "8:"
+            "Object" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
+            "FileType" = "3:2"
+            "InstallAction" = "3:4"
+            "Arguments" = "8:"
+            "EntryPoint" = "8:"
+            "Sequence" = "3:1"
+            "Identifier" = "8:_AEB9A2B9_3B9C_49A8_8FD5_96DB26D75DAA"
             "InstallerClass" = "11:TRUE"
             "CustomActionData" = "8:"
             }
@@ -602,7 +597,7 @@
         "Name" = "8:Microsoft Visual Studio"
         "ProductName" = "8:Solak Gym Dnevnik"
         "ProductCode" = "8:{D71F7EB8-A6F7-4A90-9EA7-64CAF28FDB58}"
-        "PackageCode" = "8:{EE2DF3C2-9B4B-422C-8C26-69523EE65011}"
+        "PackageCode" = "8:{1D2CB7FD-F52F-4A9F-A39E-97F054D03967}"
         "UpgradeCode" = "8:{554CDD72-0E3D-43FE-9913-6D476DFC7507}"
         "AspNetVersion" = "8:4.0.30319.0"
         "RestartWWWService" = "11:FALSE"
@@ -610,12 +605,12 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:FALSE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:Teufik, Inc"
+        "Manufacturer" = "8:Teufik Cajlakovic"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:Solak Gym Dnevnik"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:Teufik, Inc"
+        "ARPCONTACT" = "8:Teufik Cajlakovic"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
         "ARPURLINFOABOUT" = "8:"
@@ -722,7 +717,7 @@
         }
         "Shortcut"
         {
-            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_258A82A6D144441D8BF7CA866AF9DDAD"
+            "{970C0BB2-C7D0-45D7-ABFA-7EC378858BC0}:_DF60CC7645364FE78F5116AB32988389"
             {
             "Name" = "8:Solak Gym Dnevnik"
             "Arguments" = "8:"
@@ -730,7 +725,7 @@
             "ShowCmd" = "3:1"
             "IconIndex" = "3:0"
             "Transitive" = "11:FALSE"
-            "Target" = "8:_DA7D99101090457E9FA079D5944D8071"
+            "Target" = "8:_C38335244163470ABBBDEDBD0B2FCED0"
             "Folder" = "8:_93483CAD1EB8415C967F0B2D236F3869"
             "WorkingFolder" = "8:_C5625DA376734892B959E2D2EACFB3EA"
             "Icon" = "8:_9658B395EC3044C4888B3377C3C1BDBD"
@@ -1163,9 +1158,9 @@
                 {
                 }
             }
-            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_DA7D99101090457E9FA079D5944D8071"
+            "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_C38335244163470ABBBDEDBD0B2FCED0"
             {
-            "SourcePath" = "8:..\\SolakGymDnevnik\\obj\\Debug\\SolakGymDnevnik.exe"
+            "SourcePath" = "8:..\\SolakGymDnevnik\\obj\\Release\\SolakGymDnevnik.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_C5625DA376734892B959E2D2EACFB3EA"

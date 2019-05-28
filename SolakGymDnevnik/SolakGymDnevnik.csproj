@@ -153,6 +153,9 @@
     <Compile Include="Views\Prijava\Prijava.xaml.cs">
       <DependentUpon>Prijava.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Views\Produzi\Produzi.xaml.cs">
+      <DependentUpon>Produzi.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\Uredi\Uredi.xaml.cs">
       <DependentUpon>Uredi.xaml</DependentUpon>
     </Compile>
@@ -187,6 +190,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Views\Prijava\Prijava.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Produzi\Produzi.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

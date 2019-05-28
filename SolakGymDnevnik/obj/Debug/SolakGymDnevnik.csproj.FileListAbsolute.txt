@@ -166,3 +166,5 @@ C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.exe
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.pdb
 C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\SolakGymDnevnik.csprojAssemblyReference.cache
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Produzi\Produzi.g.cs
+C:\Users\Teufik\Documents\Development\SolakGymDnevnik\SolakGymDnevnik\obj\Debug\Views\Produzi\Produzi.baml
